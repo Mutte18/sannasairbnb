@@ -5,16 +5,19 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+    <div class="title-logo-wrapper">
+      <div>Detta är en logga för hem</div>
+      <div class="title">
+        <RouterLink to="/"><h2>Sannas Airbnb</h2></RouterLink>
+      </div>
+      <div></div>
     </div>
+
+    <nav>
+      <RouterLink to="/">Boenden</RouterLink>
+      <RouterLink to="/companies">Boka som Företag</RouterLink>
+      <RouterLink to="/about">Om oss</RouterLink>
+    </nav>
   </header>
 
   <RouterView />
@@ -29,13 +32,6 @@ header {
 .logo {
   display: block;
   margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
 }
 
 nav a.router-link-exact-active {
@@ -57,20 +53,16 @@ nav a:first-of-type {
 }
 
 @media (min-width: 1024px) {
-  header {
+  .title-logo-wrapper {
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    justify-content: space-between;
   }
 
+  .title-logo-wrapper .title {
+    place-items: center;
+  }
   .logo {
     margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
   }
 
   nav {
@@ -80,6 +72,9 @@ nav a:first-of-type {
 
     padding: 1rem 0;
     margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(40, 52, 20, 0.76);
   }
 }
 </style>
